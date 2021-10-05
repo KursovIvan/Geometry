@@ -1,0 +1,8 @@
+﻿  Circle.cpp
+C:\Users\Иван\source\repos\SimpleGeometry\SimpleGeometry\Circle.cpp(4,27): warning C4305: инициализация: усечение из "double" в "float"
+  Rectangle.cpp
+  SimpleGeometry.cpp
+  Triangle.cpp
+  Создание кода...
+  LINK : не найден или не выполнена сборка C:\Users\Иван\source\repos\SimpleGeometry\Debug\SimpleGeometry.exe при последней инкрементной компоновке; выполняется полная компоновка
+  SimpleGeometry.vcxproj -> C:\Users\Иван\source\repos\SimpleGeometry\Debug\SimpleGeometry.exe
