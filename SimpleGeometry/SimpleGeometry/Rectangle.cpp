@@ -27,8 +27,7 @@ Rectangle::Rectangle()
 			std::cout << "Некорректный ввод " << std::endl;
 		}
 	}
-	this->show_perimeter();
-	this->show_square();
+	this->figureType = figureTypes::typeRectangle;
 }
 
 void Rectangle::show_perimeter()
@@ -38,4 +37,8 @@ void Rectangle::show_perimeter()
 void Rectangle::show_square()
 {
 	std::cout << "Площадь прямоугольника = " << square << std::endl;
+}
+void Rectangle::show_figuretype()
+{
+	std::cout << enumToString(figureType) << std::endl;
 }

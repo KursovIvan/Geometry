@@ -28,8 +28,7 @@ Triangle::Triangle()
 			std::cout << "Некорректный ввод " << std::endl;
 		}	
 	}
-	this->show_perimeter();
-	this->show_square();
+	this->figureType = figureTypes::typeTriangle;
 }
 
 void Triangle::show_perimeter()
@@ -39,4 +38,8 @@ void Triangle::show_perimeter()
 void Triangle::show_square()
 {
 	std::cout << "Площадь треугольника = " << square << std::endl;
+}
+void Triangle::show_figuretype()
+{
+	std::cout << enumToString(figureType) << std::endl;
 }

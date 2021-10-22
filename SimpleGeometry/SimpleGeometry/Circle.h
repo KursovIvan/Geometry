@@ -11,4 +11,5 @@ public:
 
 	void show_perimeter() override;
 	void show_square() override;
+	void show_figuretype() override;
 };

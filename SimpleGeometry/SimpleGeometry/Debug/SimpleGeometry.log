@@ -1,8 +1,12 @@
 ﻿  Circle.cpp
 C:\Users\Иван\source\repos\SimpleGeometry\SimpleGeometry\Circle.cpp(4,27): warning C4305: инициализация: усечение из "double" в "float"
+  Figure.cpp
   Rectangle.cpp
   SimpleGeometry.cpp
+C:\Users\Иван\source\repos\SimpleGeometry\SimpleGeometry\SimpleGeometry.cpp(69,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Иван\source\repos\SimpleGeometry\SimpleGeometry\SimpleGeometry.cpp(71,27): warning C4018: <: несоответствие типов со знаком и без знака
   Triangle.cpp
+  figureTypes.cpp
   Создание кода...
-  LINK : не найден или не выполнена сборка C:\Users\Иван\source\repos\SimpleGeometry\Debug\SimpleGeometry.exe при последней инкрементной компоновке; выполняется полная компоновка
+C:\Users\Иван\source\repos\SimpleGeometry\SimpleGeometry\figureTypes.cpp(23): warning C4715: enumToString: значение возвращается не при всех путях выполнения
   SimpleGeometry.vcxproj -> C:\Users\Иван\source\repos\SimpleGeometry\Debug\SimpleGeometry.exe
