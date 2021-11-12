@@ -5,11 +5,10 @@
 #include "Rectangle.h"
 #include "Circle.h"
 
-bool inputCheck(int number)
+bool inputCheck(int number, int minValue)
 {
-    if ((std::cin.fail()) || std::cin.peek() != '\n' || number % 1 != 0 || number < 0)
-    {
-        std::cout << "Некорректный ввод " << std::endl;
+    if ((std::cin.fail()) || std::cin.peek() != '\n' || number < minValue || number < 0)
+    {      
         std::cin.clear();
         std::cin.ignore(std::cin.rdbuf()->in_avail());
         return false;
@@ -20,16 +19,30 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     int figuresNumber = 0;
-    std::cout << "Введите количество фигур: ";
+	int dimension = 0;  
     while (true)
     {
+        std::cout << "Введите количество фигур: ";
         std::cin >> figuresNumber;
-        if (!inputCheck(figuresNumber))
+        if (!inputCheck(figuresNumber, 1))
         {
+            std::cout << "Некорректный ввод " << std::endl;
             continue;
         }
         else break;
     }
+	while (true)
+	{
+        std::cout << "Введите измерение (0 - полярная система координат): ";
+		std::cin >> dimension;
+		if (!inputCheck(dimension, 0) || dimension == 1)
+		{
+            std::cout << "Некорректный ввод " << std::endl;
+			continue;
+		}
+		else break;
+	}
+
     std::vector<Figure*> Figures;
     for (int i = 0; i < figuresNumber; i++)
     {    
@@ -39,8 +52,9 @@ int main()
                 std::cout << "Введите число, чтобы создать фигуру" << "\n\t0 - треугольник"
                     << "\n\t1 - прямоугольник" << "\n\t2 - круг" << std::endl;
                 std::cin >> figureT;
-                if (!inputCheck(figureT) || figureT > 2)
+                if (!inputCheck(figureT, 0) || figureT > 2)
                 {
+                    std::cout << "Некорректный ввод " << std::endl;
                     continue;
                 }
                 else break;
@@ -50,25 +64,25 @@ int main()
             {
             case 0:
             {
-                Figures.push_back(new Triangle);
+                Figures.push_back(new Triangle(dimension));
                 break;
             }
             case 1:
             {
-                Figures.push_back(new Rectangle);
+                Figures.push_back(new Rectangle(dimension));
                 break;
             }
             case 2:
             {
-                Figures.push_back(new Circle);
+                Figures.push_back(new Circle(dimension));
                 break;
             }
             }           
     }
 
-    for (int i = 0; i < Figures.size(); i++)
+    for (size_t i = 0; i < Figures.size(); i++)
     {
-        for (int j = 0; j < Figures.size() - i - 1; j++)
+        for (size_t j = 0; j < Figures.size() - i - 1; j++)
         {
             if (Figures[j]->figureType > Figures[j + 1]->figureType)
             {
@@ -82,6 +96,8 @@ int main()
     for (const auto& element : Figures)
     {
         element->show_figuretype();
+        element->show_perimeter();
+        element->show_square();
     }
 
     _getch();

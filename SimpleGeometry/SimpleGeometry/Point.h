@@ -1,19 +1,14 @@
 #pragma once
+#include <vector>
 
 class Point
 {
 public:
 
-	Point(char letter);
-
-	float get_x();
-	float get_y();
-	
-private:
-
-	float x;
-	float y;
+	Point(char letter, int dimension);
+	std::vector<float> coordinates;
 };
 
-float calc_side(Point A, Point B);
-float enter(char letter);
+float enter(char letter, float minValue, float maxValue);
+float enter(int i);
+float calc_side(Point A, Point B, int dimension);

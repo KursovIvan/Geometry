@@ -1,20 +1,20 @@
 #include "Rectangle.h"
 #include <iostream>
 
-Rectangle::Rectangle()
+Rectangle::Rectangle(int dimension)
 {
 	std::cout << "\nСоздание прямоугольника " << std::endl;
 	while (true)
 	{
 		std::cout << "Точки необходимо вводить последовательно " << std::endl;
 
-		Point A('A');
-		Point B('B');
-		Point C('C');
+		Point A('A', dimension);
+		Point B('B', dimension);
+		Point C('C', dimension);
 
-		float A_side = calc_side(A, B);
-		float B_side = calc_side(B, C);
-		float hypotenuse = calc_side(A, C);
+		float A_side = calc_side(A, B, dimension);
+		float B_side = calc_side(B, C, dimension);
+		float hypotenuse = calc_side(A, C, dimension);
 
 		if ((hypotenuse * hypotenuse == B_side * B_side + A_side * A_side) && A_side != 0 && B_side != 0)
 		{

@@ -4,7 +4,6 @@
 class Figure
 {
 protected:
-
 	float perimeter;
 	float square;	
 

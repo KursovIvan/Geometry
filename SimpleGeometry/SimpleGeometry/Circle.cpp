@@ -1,17 +1,17 @@
 #include "Circle.h"
 #include <iostream>
 
-const float Pi = 3.1415926;
+const float Pi = 3.1415926f;
 
-Circle::Circle() 
+Circle::Circle(int dimension) 
 {
 	std::cout << "\n—оздание круга " << std::endl;
 	std::cout << "¬ведите координаты радиуса " << std::endl;
 
-	Point A('A');
-	Point B('B');
+	Point A('A', dimension);
+	Point B('B', dimension);
 
-	float radius = calc_side(A, B);
+	float radius = calc_side(A, B, dimension);
 
 	this->perimeter = 2 * Pi * radius;
 	this->square = Pi * radius * radius;

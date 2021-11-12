@@ -7,7 +7,7 @@ class Circle : public Figure
 {
 public:
 
-	Circle();
+	Circle(int dimension);
 
 	void show_perimeter() override;
 	void show_square() override;
