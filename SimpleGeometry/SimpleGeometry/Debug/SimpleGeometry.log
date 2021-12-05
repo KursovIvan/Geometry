@@ -1,4 +1,6 @@
-﻿  SimpleGeometry.cpp
-C:\Users\Иван\source\repos\SimpleGeometry\SimpleGeometry\SimpleGeometry.cpp(83,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Иван\source\repos\SimpleGeometry\SimpleGeometry\SimpleGeometry.cpp(85,27): warning C4018: <: несоответствие типов со знаком и без знака
-  SimpleGeometry.vcxproj -> C:\Users\Иван\source\repos\SimpleGeometry\Debug\SimpleGeometry.exe
+﻿  CircleFactory.cpp
+  RectangleFactory.cpp
+  SimpleGeometry.cpp
+  TriangleFactory.cpp
+  Создание кода...
+  SimpleGeometry.vcxproj -> D:\GitHub\Geometry\SimpleGeometry\Debug\SimpleGeometry.exe

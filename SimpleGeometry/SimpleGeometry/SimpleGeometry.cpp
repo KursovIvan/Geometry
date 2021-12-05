@@ -1,9 +1,12 @@
 ﻿#include <iostream>
 #include <conio.h>
 #include <vector>
-#include "Triangle.h"
-#include "Rectangle.h"
-#include "Circle.h"
+#include "Figure.h"
+#include "Point.h"
+#include "FiguresFactory.h"
+#include "TriangleFactory.h"
+#include "RectangleFactory.h"
+#include "CircleFactory.h"
 
 bool inputCheck(int number, int minValue)
 {
@@ -15,6 +18,8 @@ bool inputCheck(int number, int minValue)
     }
     return true;
 }
+
+int Point::dimension;
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -42,8 +47,9 @@ int main()
 		}
 		else break;
 	}
-
-    std::vector<Figure*> Figures;
+    Point::dimension = dimension;
+    std::vector<Figure*> figures;
+    FiguresFactory* factory;
     for (int i = 0; i < figuresNumber; i++)
     {    
             int figureT = 0;
@@ -64,36 +70,39 @@ int main()
             {
             case 0:
             {
-                Figures.push_back(new Triangle(dimension));
+                factory = new TriangleFactory;
+                figures.push_back(factory->CreateFigure());
                 break;
             }
             case 1:
             {
-                Figures.push_back(new Rectangle(dimension));
+                factory = new RectangleFactory;
+                figures.push_back(factory->CreateFigure());
                 break;
             }
             case 2:
             {
-                Figures.push_back(new Circle(dimension));
+                factory = new CircleFactory;
+                figures.push_back(factory->CreateFigure());
                 break;
             }
             }           
     }
 
-    for (size_t i = 0; i < Figures.size(); i++)
+    for (size_t i = 0; i < figures.size(); i++)
     {
-        for (size_t j = 0; j < Figures.size() - i - 1; j++)
+        for (size_t j = 0; j < figures.size() - i - 1; j++)
         {
-            if (Figures[j]->figureType > Figures[j + 1]->figureType)
+            if (figures[j]->figureType > figures[j + 1]->figureType)
             {
-                Figure* temp = Figures[j];
-                Figures[j] = Figures[j + 1];
-                Figures[j + 1] = temp;
+                Figure* temp = figures[j];
+                figures[j] = figures[j + 1];
+                figures[j + 1] = temp;
             }
         }
     }
 
-    for (const auto& element : Figures)
+    for (const auto& element : figures)
     {
         element->show_figuretype();
         element->show_perimeter();

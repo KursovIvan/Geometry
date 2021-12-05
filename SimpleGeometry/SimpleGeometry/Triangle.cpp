@@ -1,20 +1,20 @@
 #include "Triangle.h"
 #include <iostream>
 
-Triangle::Triangle(int dimension)
+Triangle::Triangle()
 {
 	std::cout << "\nСоздание невырожденного треугольника " << std::endl;
 	while (true)
 	{
 		std::cout << "\nТочки необходимо вводить последовательно " << std::endl;
 
-		Point A('A', dimension);
-		Point B('B', dimension);
-		Point C('C', dimension);
+		Point A('A');
+		Point B('B');
+		Point C('C');
 
-		float A_side = calc_side(A, B, dimension);
-		float B_side = calc_side(B, C, dimension);
-		float C_side = calc_side(C, A, dimension);
+		float A_side = calc_side(A, B);
+		float B_side = calc_side(B, C);
+		float C_side = calc_side(C, A);
 
 		if ((A_side + B_side > C_side) && A_side != 0 && B_side != 0 && C_side != 0)
 		{

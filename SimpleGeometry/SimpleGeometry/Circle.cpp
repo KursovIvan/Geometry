@@ -3,15 +3,15 @@
 
 const float Pi = 3.1415926f;
 
-Circle::Circle(int dimension) 
+Circle::Circle() 
 {
 	std::cout << "\n—оздание круга " << std::endl;
 	std::cout << "¬ведите координаты радиуса " << std::endl;
 
-	Point A('A', dimension);
-	Point B('B', dimension);
+	Point A('A');
+	Point B('B');
 
-	float radius = calc_side(A, B, dimension);
+	float radius = calc_side(A, B);
 
 	this->perimeter = 2 * Pi * radius;
 	this->square = Pi * radius * radius;

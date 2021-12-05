@@ -2,16 +2,16 @@
 #include <iostream>
 #include <limits>
 
-Point::Point(char letter, int dimension) 
+Point::Point(char letter) 
 {
 	std::cout << "\n—оздание точки " << letter << std::endl;
 	std::cout << "¬ведите координаты " << std::endl;
-	if (dimension == 0) 
+	if (Point::dimension == 0) 
 	{
 		coordinates.push_back(enter('p', std::numeric_limits<float>::min(), std::numeric_limits<float>::max()));
 		coordinates.push_back(enter('f', 0, 2));
 	}
-	else for (int i = 0; i < dimension; i++) 
+	else for (int i = 0; i < Point::dimension; i++) 
 	{		
 		coordinates.push_back(enter(i));
 	}
@@ -60,16 +60,16 @@ float enter(int i)
 
 	return num;
 }
-float calc_side(Point A, Point B, int dimension) 
+float calc_side(Point A, Point B) 
 {
 	float sideSum = 0;
-	if (dimension == 0) 
+	if (Point::dimension == 0)
 	{
 		sideSum = sqrt(A.coordinates.at(0) * A.coordinates.at(0) + B.coordinates.at(0) * B.coordinates.at(0) - 2 *
 			A.coordinates.at(0) * B.coordinates.at(0) * cos(A.coordinates.at(1) * 3.1415926f - B.coordinates.at(1) * 3.1415926f));
 		return sideSum;
 	}
-	else for (int i = 0; i < dimension; i++) 
+	else for (int i = 0; i < Point::dimension; i++) 
 	{
 		sideSum += (B.coordinates.at(i) - A.coordinates.at(i)) * (B.coordinates.at(i) - A.coordinates.at(i));
 	}

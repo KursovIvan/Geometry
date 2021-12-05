@@ -6,7 +6,7 @@ class Rectangle : public Figure
 {
 public:
 	
-	Rectangle(int dimension);
+	Rectangle();
 
 	void show_perimeter() override;
 	void show_square() override;

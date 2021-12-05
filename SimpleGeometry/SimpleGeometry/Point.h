@@ -3,12 +3,15 @@
 
 class Point
 {
+	
 public:
 
-	Point(char letter, int dimension);
+	Point(char letter);
 	std::vector<float> coordinates;
+	static int dimension;
+	
 };
 
 float enter(char letter, float minValue, float maxValue);
 float enter(int i);
-float calc_side(Point A, Point B, int dimension);
+float calc_side(Point A, Point B);

@@ -140,20 +140,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="CircleFactory.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="figureTypes.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="RectangleFactory.cpp" />
     <ClCompile Include="SimpleGeometry.cpp" />
     <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="TriangleFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="CircleFactory.h" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="FiguresFactory.h" />
     <ClInclude Include="figureTypes.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="RectangleFactory.h" />
     <ClInclude Include="Triangle.h" />
+    <ClInclude Include="TriangleFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,7 +6,7 @@ class Triangle : public Figure
 {
 public:
 
-	Triangle(int dimension);
+	Triangle();
 
 	void show_perimeter() override;
 	void show_square() override;
